@@ -243,11 +243,16 @@ systemctl enable hassio-supervisor.service > /dev/null 2>&1;
 # Install Hass.io AppArmor
 info "Install AppArmor scripts"
 mkdir -p "${DATA_SHARE}/apparmor"
-info "curl -sL $URL_BIN_APPARMOR > $PREFIX/sbin/hassio-apparmor"
-curl -sL ${URL_BIN_APPARMOR} > "${PREFIX}/sbin/hassio-apparmor"
+info "Manually RUN: curl -sL $URL_BIN_APPARMOR > $PREFIX/sbin/hassio-apparmor"
+#curl -sL ${URL_BIN_APPARMOR} > "${PREFIX}/sbin/hassio-apparmor"
 
 info "Curl 1 ok"
-curl -sL ${URL_SERVICE_APPARMOR} > "${SYSCONFDIR}/systemd/system/hassio-apparmor.service"
+
+info "Manually RUN: curl -sL $URL_SERVICE_APPARMOR > "$SYSCONFDIR/systemd/system/hassio-apparmor.service"
+info "Curl 2 ok"
+#curl -sL ${URL_SERVICE_APPARMOR} > "${SYSCONFDIR}/systemd/system/hassio-apparmor.service"
+info "Manually RUN: curl -sL $URL_APPARMOR_PROFILE > "$DATA_SHARE/apparmor/hassio-supervisor"
+
 curl -sL ${URL_APPARMOR_PROFILE} > "${DATA_SHARE}/apparmor/hassio-supervisor"
 
 sed -i "s,%%HASSIO_CONFIG%%,${CONFIG},g" "${PREFIX}/sbin/hassio-apparmor"
