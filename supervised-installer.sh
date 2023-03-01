@@ -201,8 +201,8 @@ if [ ! -d "${PREFIX}/bin" ]; then
     mkdir -p "${PREFIX}/bin"
 fi
 # Read infos from web
-HASSIO_VERSION=$(curl -s $URL_VERSION | jq -e -r '.supervisor')
-
+# HASSIO_VERSION=$(curl -s $URL_VERSION | jq -e -r '.supervisor')
+HASSIO_VERSION="2023.01.1"
 ##
 # Write configuration
 cat > "$CONFIG" <<- EOF
