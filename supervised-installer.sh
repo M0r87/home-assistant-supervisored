@@ -251,9 +251,7 @@ info "Manually RUN: curl -sL $URL_SERVICE_APPARMOR > $SYSCONFDIR/systemd/system/
 info "Curl 2 ok"
 #curl -sL ${URL_SERVICE_APPARMOR} > "${SYSCONFDIR}/systemd/system/hassio-apparmor.service"
 info "Manually RUN: curl -sL $URL_APPARMOR_PROFILE > $DATA_SHARE/apparmor/hassio-supervisor"
-
-#curl -sL ${URL_APPARMOR_PROFILE} > "${DATA_SHARE}/apparmor/hassio-supervisor"
-
+# curl -sL ${URL_APPARMOR_PROFILE} > "${DATA_SHARE}/apparmor/hassio-supervisor"
 sed -i "s,%%HASSIO_CONFIG%%,${CONFIG},g" "${PREFIX}/sbin/hassio-apparmor"
 sed -i -e "s,%%SERVICE_DOCKER%%,${SERVICE_DOCKER},g" \
     -e "s,%%HASSIO_APPARMOR_BINARY%%,${PREFIX}/sbin/hassio-apparmor,g" \
