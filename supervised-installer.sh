@@ -248,10 +248,10 @@ info "Manually RUN: curl -sL $URL_BIN_APPARMOR > $PREFIX/sbin/hassio-apparmor"
 
 info "Curl 1 ok"
 
-info "Manually RUN: curl -sL $URL_SERVICE_APPARMOR > "$SYSCONFDIR/systemd/system/hassio-apparmor.service"
+info "Manually RUN: curl -sL $URL_SERVICE_APPARMOR > $SYSCONFDIR/systemd/system/hassio-apparmor.service"
 info "Curl 2 ok"
 #curl -sL ${URL_SERVICE_APPARMOR} > "${SYSCONFDIR}/systemd/system/hassio-apparmor.service"
-info "Manually RUN: curl -sL $URL_APPARMOR_PROFILE > "$DATA_SHARE/apparmor/hassio-supervisor"
+info "Manually RUN: curl -sL $URL_APPARMOR_PROFILE > $DATA_SHARE/apparmor/hassio-supervisor"
 
 curl -sL ${URL_APPARMOR_PROFILE} > "${DATA_SHARE}/apparmor/hassio-supervisor"
 
