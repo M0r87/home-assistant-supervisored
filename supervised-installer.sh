@@ -271,9 +271,8 @@ systemctl start hassio-supervisor.service
 # Setup CLI
 info "Installing the 'ha' cli"
 info "Manually RUN: curl -sL $URL_HA > $PREFIX/bin/ha"
-curl -sL ${URL_HA} > "${PREFIX}/bin/ha"
+# curl -sL ${URL_HA} > "${PREFIX}/bin/ha"
 chmod a+x "${PREFIX}/bin/ha"
-
 info
 info "Home Assistant supervised is now installed"
 info "First setup will take some time, when it's ready you can reach it here:"
