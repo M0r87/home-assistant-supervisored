@@ -226,9 +226,10 @@ info "Install supervisor startup scripts"
 info "Variabili"
 info "$URL_BIN_HASSIO"
 info "$URL_SERVICE_HASSIO"
+info "$PREFIX"
 curl -sL ${URL_BIN_HASSIO} > "${PREFIX}/sbin/hassio-supervisor"
 curl -sL ${URL_SERVICE_HASSIO} > "${SYSCONFDIR}/systemd/system/hassio-supervisor.service"
-
+info "Curl fatto"
 sed -i "s,%%HASSIO_CONFIG%%,${CONFIG},g" "${PREFIX}"/sbin/hassio-supervisor
 sed -i -e "s,%%BINARY_DOCKER%%,${BINARY_DOCKER},g" \
        -e "s,%%SERVICE_DOCKER%%,${SERVICE_DOCKER},g" \
