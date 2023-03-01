@@ -1,0 +1,10 @@
+<<<<<<< Updated upstream
+source /etc/network/interfaces.d/*
+
+auto lo
+=======
+source /etc/network/interfaces.d/*
+
+auto lo
+>>>>>>> Stashed changes
+iface lo inet loopback

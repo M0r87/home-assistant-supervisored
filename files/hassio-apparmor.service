@@ -1,0 +1,27 @@
+<<<<<<< Updated upstream
+[Unit]
+Description=Hass.io AppArmor
+Wants=hassio-supervisor.service
+Before=%%SERVICE_DOCKER%% hassio-supervisor.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=%%HASSIO_APPARMOR_BINARY%%
+
+[Install]
+WantedBy=multi-user.target
+=======
+[Unit]
+Description=Hass.io AppArmor
+Wants=hassio-supervisor.service
+Before=%%SERVICE_DOCKER%% hassio-supervisor.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=%%HASSIO_APPARMOR_BINARY%%
+
+[Install]
+WantedBy=multi-user.target
+>>>>>>> Stashed changes
