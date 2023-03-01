@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 {
     "log-driver": "journald",
     "storage-driver": "overlay2",
@@ -8,14 +7,3 @@
         "tag": "{{.Name}}"
     }
 }
-=======
-{
-    "log-driver": "journald",
-    "storage-driver": "overlay2",
-    "ip6tables": true,
-    "experimental": true,
-    "log-opts": {
-        "tag": "{{.Name}}"
-    }
-}
->>>>>>> Stashed changes
