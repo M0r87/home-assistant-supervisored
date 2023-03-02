@@ -217,7 +217,7 @@ EOF
 # Pull supervisor image
 info "Install supervisor Docker container"
 info "$HASSIO_DOCKER:$HASSIO_VERSION"
-# docker pull "$HASSIO_DOCKER:$HASSIO_VERSION" > /dev/null
+docker pull "$HASSIO_DOCKER:$HASSIO_VERSION" > /dev/null
 docker tag "$HASSIO_DOCKER:$HASSIO_VERSION" "$HASSIO_DOCKER:latest" > /dev/null
 
 ##
@@ -254,9 +254,9 @@ info "Manually RUN: curl -sL $URL_BIN_APPARMOR > $PREFIX/sbin/hassio-apparmor"
 info "Curl 1 ok"
 info "Manually RUN: curl -sL $URL_SERVICE_APPARMOR > $SYSCONFDIR/systemd/system/hassio-apparmor.service"
 info "Curl 2 ok"
-#curl -sL ${URL_SERVICE_APPARMOR} > "${SYSCONFDIR}/systemd/system/hassio-apparmor.service"
+curl -sL ${URL_SERVICE_APPARMOR} > "${SYSCONFDIR}/systemd/system/hassio-apparmor.service"
 info "Manually RUN: curl -sL $URL_APPARMOR_PROFILE > $DATA_SHARE/apparmor/hassio-supervisor"
-# curl -sL ${URL_APPARMOR_PROFILE} > "${DATA_SHARE}/apparmor/hassio-supervisor"
+curl -sL ${URL_APPARMOR_PROFILE} > "${DATA_SHARE}/apparmor/hassio-supervisor"
 sed -i "s,%%HASSIO_CONFIG%%,${CONFIG},g" "${PREFIX}/sbin/hassio-apparmor"
 sed -i -e "s,%%SERVICE_DOCKER%%,${SERVICE_DOCKER},g" \
     -e "s,%%HASSIO_APPARMOR_BINARY%%,${PREFIX}/sbin/hassio-apparmor,g" \
